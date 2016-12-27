@@ -15,7 +15,9 @@
  */
 package com.exorathcloud.service.events;
 
+import com.exorathcloud.service.events.res.Event;
 import com.exorathcloud.service.events.res.EventMeta;
+import com.exorathcloud.service.events.res.Subscription;
 import com.exorathcloud.service.events.res.Success;
 
 /**
@@ -23,11 +25,11 @@ import com.exorathcloud.service.events.res.Success;
  */
 public interface Service {
 
-    Success publishEvent(String eventId, EventMeta meta);
-
+   //Success publishEvent(String eventId, EventMeta meta);
+    Success publishEvent(Event event);
     /**
      * @return Whether or not the subscription was successful.
      */
-    boolean subscribe(String[] events, String serviceId, String instanceId);
-
+    // boolean subscribe(String[] events, String serviceId, String instanceId);
+    boolean subscribe(Subscription subscription);
 }
