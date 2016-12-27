@@ -11,7 +11,7 @@ public interface Subscription {
      * Calling this will send the event to the subscribed service
      * @param event the event to transmit to the subscribed service
      */
-    void onEvent(Event event);
+    boolean onEvent(Event event);
 
     /**
      * Returns a stream of all subscribeRequests that are transmitted by the subbed service
