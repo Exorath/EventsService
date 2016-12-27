@@ -1,5 +1,6 @@
 package com.exorathcloud.service.events.res;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 
 /**
@@ -17,4 +18,10 @@ public interface Subscription {
      * @return a stream of subscribeRequests transmitted by subbed service
      */
     Observable<SubscribeRequest> getSubscribeRequestStream();
+
+    /**
+     * This completable will complete when the subscription is terminated for some reason (most likely a connection termination)
+     * @return a completable that will complete when the subscription is terminated
+     */
+    Completable getCompletable();
 }
