@@ -11,10 +11,7 @@ Every service type will receive this message only once.
 {"eventId": "join", "meta": {"uuid": "05b39a97-a9e4-4a17-8741-bedf13201f2f", "bungeeId": "24"}}
 ```
 - eventId (string): The event identifier (e.g. "join")
-- meta (string): Event specific data.
-  - uuid (UUID)[OPTIONAL]: The id of the player.
-  - bungeeId (string)[OPTIONAL]: The id of the posting bungee server.
-  - spigotId (string)[OPTIONAL]: The id of the posting spigot server. 
+- meta (json object): Event specific data (see Event meta's for more info)
 
 ###/subscribe [WEBSOCKET]:
 ####Creates a websocket that streams event data.
@@ -30,3 +27,6 @@ Every service type will receive this message only once.
 ```json
 {"eventId": "join", "meta": {"uuid": "05b39a97-a9e4-4a17-8741-bedf13201f2f", "bungeeId": "24"}}
 ```
+
+
+##Event meta's
