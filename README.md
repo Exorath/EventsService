@@ -19,7 +19,7 @@ Every service type will receive this message only once.
 **Outbound Messages**:
 - subscribe (string): Subscribes the service to the specified events.
 ```json
-{"subscribe": ["join", "leave"], "serviceId": "MessageService", "instanceId": "05b39a97-a9e4-4a17-8741-bedf13201f2f"}
+{"subscribe": {"eventIds": ["join", "leave"], "serviceId": "MessageService", "instanceId": "05b39a97-a9e4-4a17-8741-bedf13201f2f"}}
 ```
 
 **Inbound Messages**:
