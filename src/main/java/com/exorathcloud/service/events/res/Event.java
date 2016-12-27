@@ -9,6 +9,12 @@ public class Event {
     private String eventId;
     private Object meta;
 
+    public Event(){}
+
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
+    }
+
     /**
      * Gets the type id of this event (fe. 'join')
      * @return the type id of this event

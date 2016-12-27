@@ -16,7 +16,6 @@
 package com.exorathcloud.service.events;
 
 import com.exorathcloud.service.events.res.Event;
-import com.exorathcloud.service.events.res.EventMeta;
 import com.exorathcloud.service.events.res.Subscription;
 import com.exorathcloud.service.events.res.Success;
 

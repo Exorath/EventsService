@@ -16,7 +16,7 @@
 package com.exorathcloud.service.events;
 
 import com.exorath.service.commons.portProvider.PortProvider;
-import com.exorathcloud.service.events.res.EventMeta;
+import com.exorathcloud.service.events.res.Event;
 import com.exorathcloud.service.events.res.EventSocket;
 import com.exorathcloud.service.events.res.Success;
 import com.google.gson.Gson;
@@ -41,17 +41,14 @@ public class Transport {
 
     public static Route getPostEventRoute(Service service) {
         return (req, res) -> {
-            EventMeta meta = null;
-
             try {
-                meta = GSON.fromJson(req.body(), EventMeta.class);
+                Event event = GSON.fromJson(req.body(), Event.class);
+                event.setEventId(req.params("eventId"));
+                return service.publishEvent(event);
             }catch (Exception e) {
                 e.printStackTrace();
                 return new Success(false, e.getMessage());
             }
-
-            return service.publishEvent(req.params("eventId"), meta);
         };
     }
-
 }
