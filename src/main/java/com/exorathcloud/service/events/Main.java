@@ -15,11 +15,21 @@
  */
 package com.exorathcloud.service.events;
 
+import com.exorath.service.commons.portProvider.PortProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by Shortninja66 on 12/26/2016.
  */
 public class Main {
+    private static Service service;
+    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
-
-
+    public static void main(String[] args) {
+        Main.service = null;//Todo assign service implementation here
+        LOG.info("Service " + Main.service.getClass() + " instantiated");
+        Transport.setup(Main.service, PortProvider.getEnvironmentPortProvider());
+        LOG.info("HTTP transport setup");
+    }
 }
